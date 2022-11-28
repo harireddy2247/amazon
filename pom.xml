@@ -35,7 +35,12 @@
         </suiteXmlFiles>
     </configuration>
 </plugin>
-
-        </plugins>
+ </plugins>
     </build>
+     <properties>
+        <!-- https://maven.apache.org/general.html#encoding-warning -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
 </project>
