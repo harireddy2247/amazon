@@ -1,17 +1,19 @@
 package utils;
 
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 
 public class Base {
-	static String url="https://www.amazon.com/";
-	public WebDriver driver;
+	public  WebDriver driver;
+	String url="https://www.amazon.com/";
 	
-	@Test(priority=1)
+	@BeforeClass
 	public void openapp() 
 	{
 		System.setProperty("webdriver.chrome.driver","C:\\drivers\\chromedriver.exe");
@@ -19,8 +21,11 @@ public class Base {
 		options.addArguments("--remote-allow-origins=*");
 		ChromeDriver driver = new ChromeDriver(options);
 		driver.get(url);
+		this.driver=driver;
 	}
-	@Test(priority=2)
+	
+	
+	@AfterClass
 	public void closeapp() {
 		driver.close();
 	}
