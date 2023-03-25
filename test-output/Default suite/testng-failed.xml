@@ -6,6 +6,8 @@
       <class name="functions.checking">
         <methods>
           <include name="check"/>
+          <include name="closeapp"/>
+          <include name="openapp"/>
         </methods>
       </class> <!-- functions.checking -->
     </classes>
